@@ -6,7 +6,8 @@ import apiConfig from "../../api/apiConfig";
 
 import Button from "../button/Button";
 
-function MovieCard({ item, category }) {
+function 
+MovieCard({ item, category }) {
   return (
     <Link to={"/" + category + "/" + item.id}>
       <div

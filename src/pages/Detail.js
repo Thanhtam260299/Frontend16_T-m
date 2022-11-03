@@ -23,6 +23,7 @@ function Detail() {
       let param = {};
 
       response = await tmdbApi.detail(category, id, param);
+      window.scrollTo(0, 0);
       setData(response);
     };
 
