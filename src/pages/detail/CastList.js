@@ -22,14 +22,36 @@ function CastList() {
 
   return (
     <>
-      {data.map((item, i) => (
-        <div key={i} className="cast-item">
-          <div className="cast-item__img">
-            <img src={apiConfig.w500Image(item.profile_path)} alt="" />
-          </div>
-          <h4 className="cast-item__name">{item.name || item.original_name}</h4>
-        </div>
-      ))}
+      {data.map((item, i) => {
+        if (item.profile_path === null) {
+          return (
+            <div key={i} className="cast-item">
+              <div className="cast-item__img">
+                <img
+                  src={
+                    "https://image.tmdb.org/t/p/original/k7XZFjcHA2li9AoVJzMgLebvqCy.jpg"
+                  }
+                  alt=""
+                />
+              </div>
+              <h4 className="cast-item__name">
+                {item.name || item.original_name}
+              </h4>
+            </div>
+          );
+        } else {
+          return (
+            <div key={i} className="cast-item">
+              <div className="cast-item__img">
+                <img src={apiConfig.w500Image(item.profile_path)} alt="" />
+              </div>
+              <h4 className="cast-item__name">
+                {item.name || item.original_name}
+              </h4>
+            </div>
+          );
+        }
+      })}
     </>
   );
 }
