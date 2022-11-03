@@ -1,0 +1,21 @@
+@use "../../scss/" as *;
+
+.movie-list {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .swiper-slide {
+    min-width: 15%;
+
+    @include table {
+      width: 30%;
+    }
+
+    @include mobile {
+      width: 40%;
+    }
+  }
+}
